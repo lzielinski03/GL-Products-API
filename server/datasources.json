@@ -1,0 +1,12 @@
+{
+  "pgDataSource": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "",
+    "database": "postgres",
+    "password": "xxx4ever03",
+    "name": "pgDataSource",
+    "user": "postgres",
+    "connector": "postgresql"
+  }
+}

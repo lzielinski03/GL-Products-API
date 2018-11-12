@@ -1,0 +1,34 @@
+{
+  "name": "Customer",
+  "plural": "Customers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "schema": "gl-schema"
+    }
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": "customerId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": "customerId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
