@@ -1,0 +1,26 @@
+version: '2'
+services:
+  products-api:
+    build: ./GL-Products-API
+    command: npm start
+    volumes:
+      - ./GL-Products-API:/usr/app
+      - /usr/app/node_modules 
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+  graph-api:
+    build: ./GL-GraphQL-Products
+    command: npm start
+    volumes:
+      - ./GL-GraphQL-Products:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "3001:3001"
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: xxx4ever03
